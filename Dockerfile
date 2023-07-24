@@ -11,4 +11,4 @@ RUN apt-get install -y libgl1-mesa-dev
 
 
 #install opencv
-RUN pip install opencv-python numpy scipy matplotlib scikit-image scikit-learn ipython ipykernel
+RUN pip install opencv-python numpy scipy matplotlib scikit-image scikit-learn ipython ipykernel ipywidgets pandas sympy nose
