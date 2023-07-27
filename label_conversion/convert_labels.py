@@ -35,7 +35,7 @@ def get_contours_from_masks(mask_list):
                     mask_pad - cv2.bitwise_and(mask_pad, np.roll(mask_pad, 1, 1)) + \
                     mask_pad - cv2.bitwise_and(mask_pad, np.roll(mask_pad, -1, 1)), \
                     a_min = 0, a_max = 1)[1:-1, 1:-1]
-    contour_list.append(res)
+        contour_list.append(res)
     return contour_list
     
 
@@ -72,7 +72,8 @@ for filename in os.listdir(label_in_dir):
         with open(label_out_dir + filename, "w") as f:
             f.writelines('\n'.join(lines))
         # visualize the masks
-        for contour in contour_list:
-            cv2.imwrite(f"{mask_visualization_dir}{os.path.splitext(filename)[0]}.png", contour*255)
+        for i, contour in enumerate(contour_list):
+            cv2.imwrite(f"{mask_visualization_dir}{os.path.splitext(filename)[0]}_{i}.png", contour*255)
+            print(f"{mask_visualization_dir}{os.path.splitext(filename)[0]}.png")
 
 print(time.time()-tik)
