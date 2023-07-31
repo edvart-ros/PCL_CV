@@ -51,6 +51,8 @@ def convert_contours_to_txt_lines(contour_list, class_list, width, height):
             line.append(f"{y/height}")
         line = ' '.join(line)
         lines.append(line)
+    #append empty line at the end
+    lines.append("\n")
     return lines
 
 tik = time.time()

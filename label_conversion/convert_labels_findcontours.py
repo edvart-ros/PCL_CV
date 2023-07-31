@@ -38,11 +38,14 @@ def convert_contours_to_txt_lines(contour_list, class_list, width, height):
     for i, contour in enumerate(contour_list):
         line = []
         line.append(f"{class_list[i]}")
+        if len(contour) < 10:
+            continue
         for point in contour:
             line.append(f"{point[0][0]/width}")
             line.append(f"{point[0][1]/height}")
         line = ' '.join(line)
         lines.append(line)
+    lines.append("")
     return lines
 
 
