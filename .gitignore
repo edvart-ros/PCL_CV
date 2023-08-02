@@ -4,3 +4,4 @@ label_conversion/new_labels/*
 label_conversion/original_labels/*
 
 *.pcd
+*.pyc
