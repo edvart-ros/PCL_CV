@@ -5,3 +5,4 @@ label_conversion/original_labels/*
 
 *.pcd
 *.pyc
+*.obj
