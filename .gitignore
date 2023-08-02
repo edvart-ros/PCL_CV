@@ -6,3 +6,8 @@ label_conversion/original_labels/*
 *.pcd
 *.pyc
 *.obj
+*.json
+¨
+#ignore all pngs except for ones in dedicated images folder
+*.png
+!images/*.png
