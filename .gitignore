@@ -2,3 +2,5 @@ label_conversion/images/*
 label_conversion/masks_viz/*
 label_conversion/new_labels/*
 label_conversion/original_labels/*
+
+*.pcd
