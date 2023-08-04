@@ -1,9 +1,11 @@
-from utils import get_img_simple
 import open3d as o3d
 import matplotlib.pyplot as plt
 import numpy as np
 import copy
 import cv2
+import sys
+sys.path.append('..')
+from utils import get_img_simple
 
 
 def custom_key_action(pcd_original):
@@ -16,7 +18,7 @@ def custom_key_action(pcd_original):
         nonlocal k, varying
         if action == 1: # key down
             varying = True
-            k += 1
+            k += 100
         elif action == 0: # key up
             varying = False
             pass
@@ -40,7 +42,7 @@ def custom_key_action(pcd_original):
         if varying:
             if k == 0:
                 pcd = pcd_original
-            else:    
+            else:
                 _, pt_map = pcd_original.hidden_point_removal(camera, diameter*k)
                 pcd = pcd_original.select_by_index(pt_map)
             vis.clear_geometries()
@@ -63,6 +65,5 @@ if __name__ == "__main__":
     pcd = o3d.io.read_point_cloud(path)
     diameter = np.linalg.norm(
         np.asarray(pcd.get_max_bound()) - np.asarray(pcd.get_min_bound()))
-    camera = [0, 0, diameter]
-
+    camera = [0.016839234937480775, 0.11012706483368098, 0.18720929890288865]
     custom_key_action(pcd)
