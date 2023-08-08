@@ -12,3 +12,6 @@ The main libraries used here are cv2, open3d and matplotlib.
 
 ![3d_np_plot](images/3.png)
 *3d numpy plot*
+
+![rotating_cube](render/rotating_cube.mp4)
+*rendered rotating cube with numpy and cv2 (pinhole model)*
